@@ -103,16 +103,15 @@ int main (int ac, char **av)
 
     if (tsplib == 0) {
         rval = CCtsp_solve_sparse (ncount, ecount, elist, elen, in_tour,
-                  out_tour, mybnd, &optval, &success, &foundtour,
-                  probname, mytimebound, &hit_timebound, run_silently, &rstate,
-                  0, 0);
+                  out_tour, mybnd, &optval, &success, &foundtour, 
+                  probname, mytimebound, &hit_timebound, run_silently, &rstate);
         if (rval) {
             fprintf (stderr, "CCtsp_solve_sparse failed\n"); goto CLEANUP;
         }
     } else {
         rval = CCtsp_solve_dat (ncount, &dat, in_tour, out_tour, mybnd,
                  &optval, &success, &foundtour, probname, mytimebound,
-                 &hit_timebound, run_silently, &rstate, 0, 0, 0);
+                 &hit_timebound, run_silently, &rstate);
         if (rval) {
             fprintf (stderr, "CCtsp_solve_dat failed\n"); goto CLEANUP;
         }
@@ -216,3 +215,7 @@ static void usage (char *f)
     fprintf (stderr, "   -u #  bound on tour length\n");
     fprintf (stderr, "   -z #  bound on running time\n");
 }
+
+
+
+
