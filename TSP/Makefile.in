@@ -23,7 +23,7 @@ VPATH = @srcdir@
 CC = @CC@
 CFLAGS = @CFLAGS@ @CPPFLAGS@ -I$(BLDROOT)/INCLUDE -I$(CCINCDIR)
 LDFLAGS = @CFLAGS@ @LDFLAGS@
-LIBFLAGS = @LIBS@
+LIBFLAGS = @LIBS@ -lpthread -ldl
 RANLIB = @RANLIB@
 LPSOLVER_LIB = @LPSOLVER_LIB@
 
@@ -103,97 +103,97 @@ I2=$(BLDROOT)/INCLUDE
 
 bcontrol.$o: bcontrol.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/edgegen.h  $(I)/tsp.h      $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 blkcomb.$o:  blkcomb.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/cut.h      $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h
 blossom.$o:  blossom.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/cut.h      $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h
 bosstell.$o: bosstell.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 branch.$o:   branch.c   $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 cliqhash.$o: cliqhash.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 cliqwork.$o: cliqwork.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 combcliq.$o: combcliq.c $(I)/machdefs.h $(I2)/config.h  $(I)/macrorus.h \
         $(I)/util.h     $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 concorde.$o: concorde.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/edgegen.h  $(I)/tsp.h      $(I)/bigguy.h   $(I)/lp.h       \
         $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h                    \
-        $(I)/linkern.h  $(I)/macrorus.h 
+        $(I)/linkern.h  $(I)/macrorus.h
 control.$o:  control.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
         $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    $(I)/pq.h       \
         $(I)/pqsets.h   $(I)/cuttree.h  $(I)/consec1.h  $(I)/necklace.h \
-        $(I)/localcut.h 
+        $(I)/localcut.h
 cutcall.$o:  cutcall.c  $(I)/machdefs.h $(I2)/config.h  $(I)/macrorus.h \
         $(I)/util.h     $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
         $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    \
-        $(I)/verify.h   
+        $(I)/verify.h
 cutpool.$o:  cutpool.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 cutserv.$o:  cutserv.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 ddecker.$o:  ddecker.c  $(I)/machdefs.h $(I2)/config.h  $(I)/macrorus.h \
         $(I)/util.h     $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
         $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    \
-        $(I)/verify.h   
+        $(I)/verify.h
 ex_price.$o: ex_price.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/bigguy.h   $(I)/tsp.h      $(I)/edgegen.h  \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 generate.$o: generate.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 growcomb.$o: growcomb.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/cut.h      $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h
 poolcat.$o:  poolcat.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 prclique.$o: prclique.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/cut.h      $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/kdtree.h   $(I)/combs.h
 prob_io.$o:  prob_io.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 probserv.$o: probserv.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 qsparse.$o:  qsparse.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 skeleton.$o: skeleton.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 teething.$o: teething.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 test_tsp.$o: test_tsp.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 tighten.$o:  tighten.c  $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/tsp.h      $(I)/edgegen.h  $(I)/bigguy.h   $(I)/lp.h       \
-        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
 tsp_call.$o: tsp_call.c $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/fmatch.h   $(I)/edgegen.h  $(I)/linkern.h  \
         $(I)/tsp.h      $(I)/bigguy.h   $(I)/lp.h       $(I)/cut.h      \
         $(I)/kdtree.h   $(I)/combs.h    $(I)/pq.h       $(I)/pqsets.h   \
-        $(I)/cuttree.h  $(I)/verify.h   
+        $(I)/cuttree.h  $(I)/verify.h
 tsp_lp.$o:   tsp_lp.c   $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/macrorus.h $(I)/fmatch.h   $(I)/edgegen.h  $(I)/linkern.h  \
         $(I)/tsp.h      $(I)/bigguy.h   $(I)/lp.h       $(I)/cut.h      \
         $(I)/kdtree.h   $(I)/combs.h    $(I)/pq.h       $(I)/pqsets.h   \
-        $(I)/cuttree.h  $(I)/verify.h   
+        $(I)/cuttree.h  $(I)/verify.h
 xtour.$o:    xtour.c    $(I)/machdefs.h $(I2)/config.h  $(I)/util.h     \
         $(I)/edgegen.h  $(I)/linkern.h  $(I)/tsp.h      $(I)/bigguy.h   \
-        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h    
+        $(I)/lp.h       $(I)/cut.h      $(I)/kdtree.h   $(I)/combs.h
